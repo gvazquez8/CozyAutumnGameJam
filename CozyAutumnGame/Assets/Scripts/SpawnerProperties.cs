@@ -39,4 +39,5 @@ public class SpawnerProperties : MonoBehaviour
 
         return direction;
     }
+
 }

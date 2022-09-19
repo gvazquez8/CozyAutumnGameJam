@@ -5,9 +5,11 @@ using UnityEngine;
 public class EntityMovement : MonoBehaviour
 {
     public float velocity;
-    public Vector2 directionToMove;
-    private Rigidbody2D rb;
 
+    public Vector2 directionToMove;
+    
+    private Rigidbody2D rb;
+    
     // Awake is called either when an active GameObject that contains the script is initialized when a Scene loads,
     // or when a previously inactive GameObject is set to active, or after a GameObject created with Object.Instantiate
     // is initialized.
