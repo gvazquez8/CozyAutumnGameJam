@@ -23,10 +23,16 @@ public class PlayerMovement : MonoBehaviour
         directionalInput.x = Input.GetAxisRaw("Horizontal");
         directionalInput.y = Input.GetAxisRaw("Vertical");
 
+        //if directional movement is triggered, play sound
+        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)){
+            FindObjectOfType<AudioManager>().Play("4-footstep-loop");
+        } else if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+            FindObjectOfType<AudioManager>().Stop("4-footstep-loop");
     }
 
     private void FixedUpdate()
-    {
+    {   
+
         Vector2 pos = rb.position + directionalInput * velocity * Time.fixedDeltaTime;
         rb.MovePosition(pos);
     }
