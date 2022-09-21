@@ -892,7 +892,7 @@ GameObject:
   - component: {fileID: 885320110}
   - component: {fileID: 885320109}
   m_Layer: 0
-  m_Name: AudioManger
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -912,6 +912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: 4-footstep-loop
+    isPlaying: 0
     clip: {fileID: 8300000, guid: 2c1241f289a4824489728fb4d9df0308, type: 3}
     volume: 1
     pitch: 1
