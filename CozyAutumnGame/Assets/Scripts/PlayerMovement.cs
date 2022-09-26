@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float velocity = 5f;
 
+    [SerializeField]
+    private Animator animator;
+
     private Rigidbody2D rb;
 
     private Vector2 directionalInput;
@@ -22,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
     {
         directionalInput.x = Input.GetAxisRaw("Horizontal");
         directionalInput.y = Input.GetAxisRaw("Vertical");
+
+        animator.SetFloat("Horizontal", directionalInput.x);
+        animator.SetFloat("Vertical", directionalInput.y);
+        animator.SetFloat("Speed", directionalInput.sqrMagnitude);
+
     }
 
     private void FixedUpdate()
