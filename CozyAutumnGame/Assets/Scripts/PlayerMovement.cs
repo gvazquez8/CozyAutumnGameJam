@@ -25,7 +25,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
+    {   
+        if(directionalInput.SqrMagnitude() > 0 && !FindObjectOfType<AudioManager>().Playing("4-footstep-loop")) { // && !isPlaying
+            FindObjectOfType<AudioManager>().Play("4-footstep-loop");
+            
+        } 
+
         Vector2 pos = rb.position + directionalInput * velocity * Time.fixedDeltaTime;
         rb.MovePosition(pos);
     }
